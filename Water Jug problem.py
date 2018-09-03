@@ -1,6 +1,6 @@
  # use two jugs with different capacities to measure a certain amount of water
  # 3 operations are allowed: empty one, fill one, fill one with the other
- # algorithm: BFS, time complexity:  O(m+n)
+ # algorithm: BFS, time complexity:  O(m*n)
  
  
 def jug_bfs(m, n, target)
@@ -11,7 +11,7 @@ def jug_bfs(m, n, target)
   que.append((m,n))
   targets = [(0,target),(target,0)]
   status_set = set([(m,n)])     # record of the visited nodes
-  pre = {}                      # track the steps
+  pre = {}                      # track the path
   res = []
   while que:
       status = que.pop()
